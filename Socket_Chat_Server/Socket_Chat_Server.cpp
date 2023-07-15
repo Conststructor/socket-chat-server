@@ -36,9 +36,7 @@ int main(int argc, char* argv[])
 		return 0;
 	}
 	else
-	{
-		cout << "socket is OK\n";
-	}
+		cout << "Socket is OK\n";
 
 	// Bind socket
 
@@ -48,17 +46,16 @@ int main(int argc, char* argv[])
 	service.sin_port = htons(port);
 	if (bind(serverSocket, (SOCKADDR*)&service, sizeof(service)) == SOCKET_ERROR)
 	{
-		cout << "bind failed: " << WSAGetLastError() << endl;
+		cout << "Bind failed: " << WSAGetLastError() << endl;
 		closesocket(serverSocket);
 		WSACleanup();
 		return 0;
 	}
 	else
-	{
-		cout << "bind is OK\n";
-	}
+		cout << "Bind is OK\n";
 
 	// Listen socket
+
 	if (listen(serverSocket, 1) == SOCKET_ERROR)
 		cout << "Listen : Error listening on socket";
 	else
@@ -67,33 +64,34 @@ int main(int argc, char* argv[])
 	// Accept connections
 
 	acceptSocket = accept(serverSocket, NULL, NULL);
-	if (acceptSocket== INVALID_SOCKET)
+	if (acceptSocket == INVALID_SOCKET)
 	{
-		cout << "accept failed : " << WSAGetLastError() << endl;
+		cout << "Accept failed : " << WSAGetLastError() << endl;
 		WSACleanup();
 		return -1;
 	}
-	cout << "Accepted connection\n";
-	system("pause");
-	WSACleanup();
-
-	// Recive message from client
-	char buffer[300];
-
-	int byteCount = recv(acceptSocket, buffer, 300, 0);
-	if (byteCount > 0)
-	{
-		cout << "Message recived: " << buffer << endl;
-	}
 	else
+		cout << "Accepted connection\n";
+
+	// Recive message from client and sending confirmation
+	bool exitTrigger = false;
+	while (exitTrigger == false)
 	{
-		WSACleanup();
+		char buffer[300];
+		int byteCount = recv(acceptSocket, buffer, 300, 0);
+		if (byteCount > 0)
+			cout << "Message recived: " << buffer << endl;
+		else
+			WSACleanup();
+		if (strcmp(buffer, "quit") == 0)
+			exitTrigger = true;
+		char confirmation[100] = "Message recived";
+		byteCount = send(acceptSocket, confirmation, 100, 0);
 	}
+
 
 	system("pause");
 	WSACleanup();
-
-
 
 	return 0;
 
