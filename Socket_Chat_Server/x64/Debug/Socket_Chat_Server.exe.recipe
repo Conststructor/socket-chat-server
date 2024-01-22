@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>H:\IT_Step\C++\Socket Chat\socket-chat-server\x64\Debug\Socket_Chat_Server.exe</FullPath>
+      <FullPath>D:\VS Projects\Socket Chat\socket-chat-server\x64\Debug\Socket_Chat_Server.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

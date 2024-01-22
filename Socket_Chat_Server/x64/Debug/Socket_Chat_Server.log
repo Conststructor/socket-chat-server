@@ -1,2 +1,8 @@
 ﻿  Socket_Chat_Server.cpp
-  Socket_Chat_Server.vcxproj -> H:\IT_Step\C++\Socket Chat\socket-chat-server\x64\Debug\Socket_Chat_Server.exe
+D:\VS Projects\Socket Chat\socket-chat-server\Socket_Chat_Server\Socket_Chat_Server.cpp(148,66): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+D:\VS Projects\Socket Chat\socket-chat-server\Socket_Chat_Server\Socket_Chat_Server.cpp(179,66): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+D:\VS Projects\Socket Chat\socket-chat-server\Socket_Chat_Server\Socket_Chat_Server.cpp(186,60): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+D:\VS Projects\Socket Chat\socket-chat-server\Socket_Chat_Server\Socket_Chat_Server.cpp(220,25): warning C4018: <: несоответствие типов со знаком и без знака
+D:\VS Projects\Socket Chat\socket-chat-server\Socket_Chat_Server\Socket_Chat_Server.cpp(249,53): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+D:\VS Projects\Socket Chat\socket-chat-server\Socket_Chat_Server\Socket_Chat_Server.cpp(520): warning C4715: RegistrationDataComparsion: значение возвращается не при всех путях выполнения
+  Socket_Chat_Server.vcxproj -> D:\VS Projects\Socket Chat\socket-chat-server\x64\Debug\Socket_Chat_Server.exe
